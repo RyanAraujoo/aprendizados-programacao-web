@@ -38,7 +38,6 @@ const ResultadoDaBatalha = (poke, atack) => {
 
 const ResultadoDaBatalha = (poke, atack) => poke > atack ? "Chupa essa manga!" : "perdedor!"
 
-
 // 
 
 console.log(ResultadoDaBatalha(vidaDoPikachu, 150))
