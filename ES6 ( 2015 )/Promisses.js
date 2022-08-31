@@ -47,7 +47,7 @@ let avsDaPromissoria = new Promise((resolve, reject) => {
          },2000)
          
      } catch (e) {
-        resolve(`Requesição falha: ${e}`)
+        reject(`Requesição falha: ${e}`)
      }
 })
 
