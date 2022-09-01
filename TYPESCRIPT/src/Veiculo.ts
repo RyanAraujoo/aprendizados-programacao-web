@@ -1,5 +1,5 @@
 export default class Veiculo {
-        protected modelo: String
+        protected modelo: String | undefined
         protected velocidade: Number = 0
 
         public acelerar(): void {  // o void é para dizer apenas que a função não tem retorno
