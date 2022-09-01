@@ -10,7 +10,10 @@
 import Carro from './Carro'
 import Pessoa from './Pessoa'
 import Concessionaria from './Concessionaria';
+
 import Moto from './Moto';
+
+
 // import { manuntencao } from './Concessionaria' --> export normal
 
 // -------------------------------------------------
@@ -47,6 +50,7 @@ let pessoa1 = new Pessoa("Ryan Pablo", "FiatUno 2010")
 
  // construção de carros dentro de uma concessionária com a possibilidade de um cliente poder comprar 
 
+
 let moto = new Moto("moto 0 bala ")
 moto.acelerar()
 moto.acelerar()
@@ -55,4 +59,8 @@ carro.acelerar()
 carro.acelerar()
 
 // -----------------------------------------------------------------
+
+
+
+
 
