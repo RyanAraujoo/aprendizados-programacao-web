@@ -1,14 +1,13 @@
 import DAO_Interface from './DAO_Interface';
-import Moto from './../Moto';
 
-export default class DAO_Moto implements DAO_Interface {
+export default class DAO_Moto<T> implements DAO_Interface<T> {
     public nomeDaTabela: String
 
     constructor(nome: String) {
         this.nomeDaTabela = nome
     }
 
-    inserir(moto: Moto): Boolean{
+    inserir(moto: T): Boolean{
         console.log(`inserindo um objeto novo!!`)
         return true
     }
@@ -18,18 +17,18 @@ export default class DAO_Moto implements DAO_Interface {
         return true
     }
 
-    editar(id: Number): Boolean { 
+    editar(id: Number): T { 
         console.log(`recuperando para depois atualizar!!`)
-        this.atualizar(new Moto(""))
-        return true
+        this.atualizar(Object())
+        return Object()
     }
 
-    buscar(id: Number): Moto { 
+    buscar(id: Number): T { 
         console.log(`buscando através do id`)
-        return new Moto("")
+        return Object()
     }
 
-    atualizar(moto: Moto): Boolean {
+    atualizar(moto: T): Boolean {
         console.log(`atualizando o objeto!!`)
         return true
     }

@@ -1,14 +1,13 @@
 import DAO_Interface from './DAO_Interface';
-import Carro from './../Carro';
 
-export default class DAO_Carro implements DAO_Interface {
+export default class DAO_Carro<T> implements DAO_Interface<T> {
     public nomeDaTabela: String
 
     constructor(nome: String) {
         this.nomeDaTabela = nome
     }
     
-    inserir(carro: Carro): Boolean{
+    inserir(carro: T): Boolean{
         console.log(`inserindo um objeto novo!!`)
         return true
     }
@@ -18,18 +17,18 @@ export default class DAO_Carro implements DAO_Interface {
         return true
     }
     
-    editar(id: Number): Boolean { 
+    editar(id: Number): T { 
         console.log(`recuperando para depois atualizar!!`)
-        this.atualizar(new Carro("",0))
-        return true
+        this.atualizar(Object())
+        return Object()
     }
     
-    buscar(id: Number): Carro { 
+    buscar(id: Number): T { 
         console.log(`buscando através do id`)
-        return new Carro("",0)
+        return Object()
     }
     
-    atualizar(carro: Carro): Boolean {
+    atualizar(carro: T): Boolean {
         console.log(`atualizando o objeto!!`)
         return true
     }

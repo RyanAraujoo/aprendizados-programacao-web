@@ -11,7 +11,6 @@
 import Carro from './Carro'
 import Pessoa from './Pessoa'
 import Concessionaria from './Concessionaria';
-
 import Moto from './Moto';
 
 
@@ -20,6 +19,8 @@ import DAO_Carro from './DAO/DAO_Carro';
 import DAO_Pessoa from './DAO/DAO_Pessoa,';
 import DAO_Moto from './DAO/DAO_Moto';
 import DAO_Concessionaria from './DAO/DAO_Concessionaria';
+import DAO_Interface from './DAO/DAO_Interface';
+
 
 // -------------------------------------------------
 let carro1 = new Carro("Fiesta 2016",4)
@@ -72,20 +73,21 @@ console.log(`Velocidade atual do moto: ${moto1.velocidadeAtual()}`)
 // -----------------------------------------------------------------
 
 console.log("-----------------------------------------------------------------")
+// A INSTANCIA É NECESSÁRIA PASSAR PARA O GENERICS DA INTERFACE O TIPO UTILIZADO + DECLARAR DAO ESPECIFICO
 
-let daoCarro = new DAO_Carro("OperatorCarro")
+let daoCarro: DAO_Interface<Carro> = new DAO_Carro<Carro>("OperatorCarro")
 
 console.log(`Inserindo no DAO de CARRO ${daoCarro.inserir(carro1)}`)
 
-let daoPessoa = new DAO_Pessoa("OperatorPessoa")
+let daoPessoa: DAO_Interface<Pessoa> = new DAO_Pessoa<Pessoa>("OperatorPessoa")
 
 console.log(`atualizando no DAO de Pessoa ${daoPessoa.atualizar(pessoa1)}`)
 
-let daoMoto = new DAO_Moto("OperatorMoto")
+let daoMoto: DAO_Interface<Moto> = new DAO_Moto<Moto>("OperatorMoto")
 
 console.log(`Buscando no DAO de Moto ${daoMoto.buscar(1234)}`)
 
-let daoConcessionaria = new DAO_Concessionaria("OperatorConcessionaria")
+let daoConcessionaria: DAO_Concessionaria<Concessionaria> = new DAO_Concessionaria<Concessionaria>("OperatorConcessionaria")
 
 console.log(`deletando no DAO de Concessionaria ${daoConcessionaria.deletar(1213)}`)
 

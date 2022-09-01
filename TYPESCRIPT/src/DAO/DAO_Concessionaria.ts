@@ -1,14 +1,14 @@
 import DAO_Interface from "./DAO_Interface";
-import Concessionaria from './../Concessionaria';
 
-export default class DAO_Concessionaria implements DAO_Interface {
+
+export default class DAO_Concessionaria<T> implements DAO_Interface<T> {
         public nomeDaTabela: String
 
         constructor(nome: String) {
             this.nomeDaTabela = nome
         }
 
-        inserir(concessionaria: Concessionaria): Boolean{
+        inserir(concessionaria: T): Boolean{
             console.log(`inserindo um objeto novo!!`)
             return true
         }
@@ -18,18 +18,18 @@ export default class DAO_Concessionaria implements DAO_Interface {
             return true
         }
 
-        editar(id: Number): Boolean { 
+        editar(id: Number): T { 
             console.log(`recuperando para depois atualizar!!`)
-            this.atualizar(new Concessionaria(""))
-            return true
+            this.atualizar(Object())
+            return Object()
         }
 
-        buscar(id: Number): Concessionaria { 
+        buscar(id: Number): T { 
             console.log(`buscando através do id`)
-            return new Concessionaria("")
+            return Object()
         }
 
-        atualizar(concessionaria: Concessionaria): Boolean {
+        atualizar(concessionaria: T): Boolean {
             console.log(`atualizando o objeto!!`)
             return true
         }

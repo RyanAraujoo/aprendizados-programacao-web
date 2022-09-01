@@ -1,10 +1,10 @@
-export default interface DAO_Interface {
+export default interface DAO_Interface<t>{ // esse <t> significa que a interface vai ser gerenciado por um tipo
    nomeDaTabela: String
 
-    inserir(object: any): Boolean
+    inserir(object: t): Boolean
     deletar(id: Number ): Boolean
-    editar(id: Number ): Boolean
-    buscar(id: Number) : any
-    atualizar(object: any): Boolean
+    editar(id: Number ): t
+    buscar(id: Number) : t
+    atualizar(object: t): Boolean
 
 }
