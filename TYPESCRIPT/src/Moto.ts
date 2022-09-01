@@ -1,3 +1,4 @@
+
 import Veiculo from "./Veiculo";
 
 export default class Moto extends Veiculo {
@@ -12,4 +13,5 @@ export default class Moto extends Veiculo {
         this.velocidade = this.velocidade = 40
     } 
     // estou sobreescrevendo o método // polimorfismo // "varias formas" <----------------
+
 }
